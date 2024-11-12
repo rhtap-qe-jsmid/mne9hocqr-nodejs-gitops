@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mne9hocqr-nodejs-gitops
+  description: This is GitOps manifest for mne9hocqr-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: mne9hocqr-nodejs
+    backstage.io/kubernetes-id: mne9hocqr-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: mne9hocqr-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mne9hocqr-nodejs
